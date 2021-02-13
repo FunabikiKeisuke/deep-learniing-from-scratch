@@ -1,0 +1,10 @@
+language: python
+
+services:
+  - docker
+
+before_install:
+  - DOCKER_BUILDKIT=1 docker build --progress=plain -t ${TRAVIS_REPO_SLUG} -f docker/Dockerfile .
+
+script:
+  - docker run --rm -v ${TRAVIS_BUILD_DIR}:/build -w /build ${TRAVIS_REPO_SLUG} bash -ex run_ci.sh
