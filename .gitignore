@@ -1,6 +1,12 @@
 # idea settings
 .idea/
 
+# dataset
+chapter03/*.gz
+
+# pickle file
+chapter03mnist.pkl
+
 # image file
 *.png
 *.jpg
