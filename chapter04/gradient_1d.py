@@ -7,7 +7,7 @@ def numerical_diff(f, x):
     return (f(x + h) - f(x - h)) / (2 * h)
 
 
-def function_1(x):
+def _function_1(x):
     return 0.01 * x ** 2 + 0.1 * x
 
 
@@ -20,11 +20,11 @@ def tangent_line(f, x):
 
 if __name__ == '__main__':
     x = np.arange(0.0, 20.0, 0.1)
-    y = function_1(x)
+    y = _function_1(x)
     plt.xlabel("x")
     plt.ylabel("f(x)")
 
-    tf = tangent_line(function_1, 5)
+    tf = tangent_line(_function_1, 5)
     y2 = tf(x)
 
     plt.plot(x, y)
